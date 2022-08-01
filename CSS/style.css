@@ -1,0 +1,248 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Space Mono Re", sans-serif;
+  list-style: none;
+  font-weight: 700;
+}
+
+
+:root {
+  /* Color */
+  --scyan: hsl(172, 67%, 45%);
+  --Vdc: hsl(183, 100%, 15%);
+  --Dgc: hsl(186, 14%, 43%);
+  --Gc: hsl(184, 14%, 56%);
+  --Lgc: hsl(185, 41%, 84%);
+  --Vlgc: hsl(189, 41%, 97%);
+
+  /* padding */
+  --pad: 2em;
+
+  /* box-shadow */
+  --smoke: 2px 2px 15px rgba(0, 0, 0, 0.1);
+
+  /* border-radius */
+  --round: 0.8em;
+}
+
+
+body {
+  background-color: var(--Lgc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.calclator {
+  width: 45em;
+  display: flex;
+  gap: 1em;
+  background-color: #fff;
+  padding: var(--pad);
+  box-shadow: var(--smoke);
+  border-radius: var(--round);
+  position: relative;
+}
+.calclator::before {
+  content: 'Splitter'; 
+  color: var(--Vdc);
+  font-size: 1.5em;
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  max-inline-size: 6ch;
+  word-wrap: break-word;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+
+.calclator > * {
+  flex: 1;
+}
+
+/* process Box */
+.calclator .process {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+}
+.calclator .process .text {
+  font-size: 12px;
+  margin-bottom: 1em;
+}
+.calclator .process label {
+  display: inline-block;
+  margin-right: 1em;
+}
+.calclator .process #bill,
+.calclator .process #num-p {
+  background-color: var(--Vlgc);
+  border: none;
+  width: 100%;
+  border-radius: 0.3em;
+  padding: 0.3em 1em;
+  text-align: end;
+  color: var(--Vdc);
+}
+.calclator .process #bill::placeholder,
+.calclator .process #num-p::placeholder {
+  color: var(--Gc);
+}
+.calclator .process div:first-child,
+.calclator .process div:last-child {
+  position: relative;
+}
+.calclator .process div:first-child::before,
+.calclator .process div:last-child::before {
+  content: '';
+  width: 0.5em;
+  height: 1em;
+  background: url("/images/icon-dollar.svg") no-repeat center;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  transform: translate(50%, -50%);
+}
+.calclator .process div:last-child::before {
+  background: url("/images/icon-person.svg") no-repeat center;
+}
+.process .tips ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+.process .tips ul li {
+  flex: 1 calc((100% / 3) - 0.5em);
+  color: #fff;
+  background-color: var(--Vdc);
+  padding: 0.2em 1em;
+  border-radius: 0.2em;
+  text-align: center;
+  cursor: pointer;
+}
+.process .tips ul .custom {
+  background-color: var(--Lgc);
+  padding: 0px;
+} 
+.process .tips ul .custom input{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  text-align: center;
+  border: none;
+  border-radius: 0.2em;
+  cursor: pointer;
+  padding: 2px;
+}
+.process .tips ul .custom input::placeholder {
+  color: var(--Vdc);
+}
+
+
+
+/* Result box */
+.calclator .result {
+  background-color: var(--Vdc);
+  padding: var(--pad);
+  color: var(--Vlgc);
+  border-radius: var(--round);
+}
+.calclator .result > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.calclator .result > div p {
+  font-size: 12px;
+}
+.calclator .result > div p span{
+  display: block;
+  color: var(--Gc);
+}
+.calclator .result .tip-amount,
+.calclator .result .total-tip {
+  color: var(--scyan);
+  font-size: 2em;
+}
+.calclator .result button {
+  width: 100%;
+  border-radius: 0.3em;
+  padding: 0.5em;
+  background-color: var(--scyan);
+  color: var(--Vdc);
+  text-transform: uppercase;
+  opacity: 0.5;
+  border: none;
+  margin-top: 4em;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* Events */
+.process .tips ul li:hover,
+.calclator .result button:hover {
+  background-color: var(--Lgc);
+  color: var(--Vdc);
+  opacity: 1;
+}
+#bill:focus,
+#num-p:focus,
+.custom input:focus {
+  outline: 2px solid var(--scyan);
+  background-color: #fff !important;
+}
+.tips ul li.choosed {
+  color: var(--Vdc);
+  background-color: var(--scyan);
+}
+.humans .error-mes {
+  font-size: 12px;
+  color: red;
+  display: none;
+}
+input.error {
+  outline: 2px solid red !important; 
+}
+button.active {
+  opacity: 1 !important;
+}
+
+
+
+
+
+/* Font */
+@font-face {
+  font-family: "Space Mono Re";
+  src: url("../Font/Space_Mono/SpaceMono-Regular.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Mono B";
+  src: url("../Font/Space_Mono/SpaceMono-Bold.ttf");
+  font-display: swap;
+}
+
+
+/* media queries */
+@media (max-width: 600px) { 
+  .calclator {
+    flex-direction: column;
+  }
+  
+}

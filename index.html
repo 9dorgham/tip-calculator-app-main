@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="./CSS/style.css">
+</head>
+  <body>
+    <div class="calclator">
+      
+      <div class="process">
+        <div>
+          <label for="bill" class="text">Bill</label>
+          <input type="text" id="bill" placeholder="0">
+        </div>
+
+        <div class="tips">
+          <p class="text">Select Tip %</p>
+          <ul>
+            <li value="5">5%</li>
+            <li value="10">10%</li>
+            <li value="15">15%</li>
+            <li value="25">25%</li>
+            <li value="50">50%</li>
+            <li class="custom">
+              <input type="text" placeholder="custom">
+            </li>
+          </ul>
+        </div>
+
+        <div class="humans">
+          <label for="num-p" class="text">Number of People</label>
+          <span class="error-mes">Cannot be zero</span>
+          <input type="text" id="num-p" placeholder="0">
+        </div>
+      </div>
+
+      <div class="result">
+        <div>
+          <p>
+            Tip Amount
+            <span>/ person</span>
+          </p>
+          <p class="tip-amount">$0:00</p>
+        </div>
+  
+        <div>
+          <p>
+            Total
+            <span>/ person</span>
+          </p>
+          <p class="total-tip">$0:00</p>
+        </div>
+  
+        <button>Reset</button>
+      </div>
+    </div>
+
+  <script src="./JS/main.js"></script>
+  </body>
+</html>
