@@ -38,7 +38,11 @@ function getPercentage(event) {
 
   selected = event.target;
   selected.classList.add('choosed');
-  percent = Number(selected.value);
+  if (selected.hasAttribute('data-value')) {
+    percent = Number(selected.dataset.value);
+  }else {
+    percent = Number(selected.value);
+  }
 }
 
 
